@@ -1,11 +1,11 @@
-Package: RRWPT
+Package: rwptR
 Type: Package
-Title: Random walk particle tracking for RMODFLOW
+Title: Random walk particle trackeR for RMODFLOW
 Version: 0.0.0.9000
-Date: 2015-10-22
+Date: 2015-12-23
 Author: Bart Rogiers <brogiers@sckcen.be>
 Maintainer: Bart Rogiers <brogiers@sckcen.be>
-Description: The RRWPT package provides an R random walk particle tracking implementation.
+Description: The rwptR package provides an R random walk particle tracking implementation to be used with the RMODFLOW package
 License: GPL (>= 2)
-URL: https://github.com/rogiersbart/RRWPT
+URL: https://github.com/rogiersbart/rwptR
 LazyData: true
