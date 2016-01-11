@@ -1,14 +1,19 @@
+#' Timestepping for a particle set
+#'
 #' @export
-timeStep <- function(xyzt,tstep,dis,bud,dsp=FALSE,mpmain=NULL)
-{
+timestep <- function(xyzt,
+                     tstep,
+                     dis,
+                     darcy,
+                     dsp = NULL,
+                     mpmain = NULL) {
   xyz <- xyzt[1:3]
-  if(!dsp)
-  {
-    xyz <- xyz + xyztov(xyz,dis,bud)*tstep
+  if(is.null(dsp)) {
+    xyz <- xyz + convert_xyzt_to_darcy(xyzt,dis,darcy)*tstep
   } else {
-    dY <- deltaY(xyzt,tstep,dis,bud,mpmain,Dm=0)
-    vB <- xyztov(xyz+dY,dis,bud)
-    xyz <- xyz + xyztov(xyz,dis,bud)*tstep + deltaY(xyzt+c(dY,0),tstep,dis,bud,mpmain,Dm=0)
+    dY <- deltaY(xyzt,tstep,dis,darcy,mpmain,Dm=0)
+    vB <- convert_xyzt_to_darcy(xyzt+dY,dis,darcy)
+    xyz <- xyz + convert_xyzt_to_darcy(xyz,dis,darcy)*tstep + deltaY(xyzt+c(dY,0),tstep,dis,darcy,mpmain,Dm=0)
   }
   return(as.numeric(c(xyz,xyzt[4] + tstep)))
 }

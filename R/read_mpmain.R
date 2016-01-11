@@ -1,4 +1,4 @@
-#' @import RTOOLZ, RMODFLOW
+#' @import RMODFLOW
 #' @export
 read_mpmain <- function(file, dis) {
   mpmain.lines <- scan(file, what=character(), sep='\n')
