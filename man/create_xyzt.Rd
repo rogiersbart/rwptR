@@ -6,6 +6,17 @@
 \usage{
 create_xyzt(x, y, z, t, prj = NULL)
 }
+\arguments{
+\item{x}{x}
+
+\item{y}{y}
+
+\item{z}{z}
+
+\item{t}{t}
+
+\item{prj}{prj}
+}
 \value{
 xyzt particle set
 }

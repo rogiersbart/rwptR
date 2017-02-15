@@ -1,10 +1,10 @@
 #' Create xyzt particle set
 #' 
-#' @param x
-#' @param y
-#' @param z
-#' @param t
-#' @param prj
+#' @param x x
+#' @param y y 
+#' @param z z
+#' @param t t
+#' @param prj prj
 #' @return xyzt particle set
 #' @export
 create_xyzt <- function(x,
